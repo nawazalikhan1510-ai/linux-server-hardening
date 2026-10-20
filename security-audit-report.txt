@@ -1,0 +1,60 @@
+LINUX SERVER HARDENING PROJECT
+Final Security Audit Report
+
+Project: Linux Server Hardening
+Platform: AWS EC2
+Operating System: Ubuntu 26.04.1 LTS (Resolute Raccoon)
+
+1. SYSTEM UPDATES
+- Updated available system packages.
+- Rebooted the server after kernel updates.
+- Automatic security updates are enabled.
+- Two packages remain deferred due to phased updates.
+
+2. FIREWALL CONFIGURATION
+- Enabled UFW firewall.
+- Default incoming traffic is denied.
+- Outgoing traffic is allowed.
+- SSH access is restricted to the configured public IP address.
+
+3. SSH SECURITY
+- Root SSH login disabled.
+- Password authentication disabled.
+- Public-key authentication enabled.
+- X11 forwarding disabled.
+- TCP forwarding disabled.
+- Agent forwarding disabled.
+- SSH configuration validated successfully.
+
+4. USER ACCOUNT AUDIT
+- Reviewed privileged user accounts.
+- Ubuntu is the only user in the sudo group.
+- Reviewed system accounts.
+
+5. FILE PERMISSIONS
+- Checked SSH configuration permissions.
+- Checked /etc/passwd permissions.
+- Checked /etc/shadow permissions.
+
+6. SERVICE AND PORT AUDIT
+- SSH service is active.
+- AppArmor is active.
+- No failed systemd units were reported.
+- Reviewed listening ports and services.
+
+7. SECURITY LOG REVIEW
+- Reviewed SSH login records.
+- Successful public-key logins were found.
+- One previously observed source IP requires confirmation.
+
+8. REMAINING REVIEW ITEMS
+- Review AppArmor profiles in complain mode.
+- Investigate one SSH login source that remains unverified.
+- Review deferred package updates later.
+
+PROJECT STATUS
+Core hardening tasks completed.
+Final review and documentation completed after verification.
+
+Note: This report records the checks performed and does not certify
+the server as completely secure.
